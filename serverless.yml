@@ -20,3 +20,12 @@ functions:
 plugins:
   - serverless-offline
   - serverless-offline-watcher
+
+custom:
+  serverless-offline-watcher:
+    - path:
+        - src/**/**
+        - index.ts
+      hook:
+        - offline:functionsUpdated
+      command: "echo Received $WATCHER_EVENT_TYPE event for $WATCHER_EVENT_PATH"
