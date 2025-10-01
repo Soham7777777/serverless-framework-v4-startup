@@ -16,9 +16,9 @@
     "serverless": "^4.19.1"
   },
   "scripts": {
-    "dev": "serverless offline start",
+    "dev": "tsc && serverless offline start",
     "debug": "export SLS_DEBUG=* && node --inspect node_modules/serverless/run.js offline start",
-    "format": "tsc && deno check && deno fmt",
+    "format": "deno check && deno fmt",
     "watch:format": "nodemon --ext ts,tsx,js,json --exec \"npm run format\""
   }
 }
