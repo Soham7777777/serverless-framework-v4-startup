@@ -12,6 +12,7 @@ provider:
 
 functions:
   api:
+    timeout: 900
     handler: index.handler
     events:
       - httpApi: "*"
@@ -19,11 +20,3 @@ functions:
 plugins:
   - serverless-offline
   - serverless-offline-watcher
-
-custom:
-  serverless-offline-watcher:
-    - path:
-        - ./src/**/**
-        - ./index.ts
-      hook:
-        - offline:functionsUpdated
