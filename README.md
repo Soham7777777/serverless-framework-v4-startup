@@ -11,7 +11,8 @@
 ## Get Started:
 
 - Clone this repo and cd into project root.
-- Delete the `.gitignore` and rename `app.gitignore` to `.gitignore`
+- Delete the `.gitignore` and rename `app.gitignore` to `.gitignore`.
+- Change the "org" in `serverless.yml`.
 - `npm install`
 - `serverless --verbose`
 - `npm run dev`
