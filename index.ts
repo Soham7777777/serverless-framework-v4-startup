@@ -1,34 +1,19 @@
 import "dotenv/config";
 import serverless from "serverless-http";
 import express from "express";
+import { loggingMiddleware } from "./src/middleware/logging.middleware.ts";
+import { sessionMiddleware } from "./src/middleware/session.middleware.ts";
+import errorHandler from "./src/middleware/errorHandler.middleware.ts";
+import { appRouter } from "./src/routes/app.route.ts";
 
 const app = express();
 
-app.use((req, _res, next) => {
-  req.body = JSON.parse(req.body);
-  next();
-});
+app.use(loggingMiddleware)
 
-app.get("/", (_req, res) => {
-  return res.status(200).json({
-    message: "Hello from root!",
-  });
-});
+app.use(sessionMiddleware)
 
-app.get("/hello", (_req, res) => {
-  return res.status(200).json({
-    message: "Hello from path!",
-  });
-});
+app.use(appRouter)
 
-app.post("/reflect", (req, res) => {
-  return res.json(req.body);
-});
-
-app.use((_req, res) => {
-  return res.status(404).json({
-    error: "Not Found",
-  });
-});
+app.use(errorHandler)
 
 exports.handler = serverless(app);

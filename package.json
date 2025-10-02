@@ -3,14 +3,20 @@
   "version": "1.0.0",
   "description": "",
   "dependencies": {
+    "cookie-session": "^2.1.1",
     "dotenv": "^17.2.3",
     "express": "^5.1.0",
+    "express-validator": "^7.2.1",
+    "morgan": "^1.10.1",
     "serverless-http": "^3.2.0",
     "serverless-offline": "^14.4.0",
     "serverless-offline-watcher": "^1.1.0"
   },
   "devDependencies": {
+    "@types/cookie-session": "^2.0.49",
     "@types/express": "^5.0.3",
+    "@types/express-validator": "^2.20.33",
+    "@types/morgan": "^1.9.10",
     "@types/node": "^24.6.0",
     "nodemon": "^3.1.10",
     "serverless": "^4.19.1"
