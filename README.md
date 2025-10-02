@@ -14,6 +14,7 @@
 ## Get Started:
 
 - Clone this repo and cd into project root.
+- delete `.git` directory and initialize new repo with `git init`
 - Delete the `.gitignore` and rename `app.gitignore` to `.gitignore`.
 - Change the "org" in `serverless.yml`.
 - Run below commands to get started:
